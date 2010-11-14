@@ -1,0 +1,31 @@
+## jvc26 Muttrc 2010
+
+# Account user/password from user file
+source ~/.mutt/user
+
+# Use TLS
+set ssl_starttls = yes
+
+# Check interval
+set mail_check = 60
+
+# Header  & Body cache
+set header_cache = ~/Mail/
+set message_cachedir = ~/Mail/
+
+# Maildir
+set mbox_type = Maildir
+
+# Source folders and folder hooks  from folders file
+source ~/.mutt/folders
+
+# Source mailboxes from mailbox file
+source ~/.mutt/mailboxes
+
+# Source Aliases from alias file
+source ~/.mutt/aliases
+set alias_file = ~/.mutt/aliases
+
+# Sending config
+set sendmail="/usr/bin/msmtp"
+set envelope_from="yes"
