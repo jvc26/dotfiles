@@ -11,16 +11,34 @@ set mail_check = 60
 
 # Header  & Body cache
 set header_cache = ~/Mail/
-set message_cachedir = ~/Mail/
+#set message_cachedir = ~/Mail/
 
 # Maildir
 set mbox_type = Maildir
+
+# Editor
+set editor = /usr/bin/vim
 
 # Source folders and folder hooks  from folders file
 source ~/.mutt/folders
 
 # Source mailboxes from mailbox file
 source ~/.mutt/mailboxes
+
+# Mailboxes for the inboxZero project
+mailboxes =ACTION
+mailboxes =RESPOND
+mailboxes =WAITFOR
+mailboxes =ARCHIVE
+
+# inboxZero macros
+macro index,pager "<F2>" "<save-message>=ACTION<enter>" "Save to Action mailbox"
+macro index,pager "<F3>" "<save-message>=RESPOND<enter>" "Save to Respond mailbox"
+macro index,pager "<F4>" "<save-message>=WAITFOR<enter>" "Save to Waitfor mailbox"
+macro index,pager "<F5>" "<save-message>=ARCHIVE<enter>" "Save to Archive mailbox"
+
+# Dont ask re: moving messages
+unset confirmappend
 
 # Source Aliases from alias file
 source ~/.mutt/aliases
