@@ -26,16 +26,19 @@ source ~/.mutt/folders
 source ~/.mutt/mailboxes
 
 # Mailboxes for the inboxZero project
-mailboxes =ACTION
-mailboxes =RESPOND
-mailboxes =WAITFOR
-mailboxes =ARCHIVE
+mailboxes =INBOX.ACTION
+mailboxes =INBOX.RESPOND
+mailboxes =INBOX.WAITFOR
+mailboxes =INBOX.ARCHIVE
 
 # inboxZero macros
-macro index,pager "<F2>" "<save-message>=ACTION<enter>" "Save to Action mailbox"
-macro index,pager "<F3>" "<save-message>=RESPOND<enter>" "Save to Respond mailbox"
-macro index,pager "<F4>" "<save-message>=WAITFOR<enter>" "Save to Waitfor mailbox"
-macro index,pager "<F5>" "<save-message>=ARCHIVE<enter>" "Save to Archive mailbox"
+macro index,pager "<F2>" "<save-message>=INBOX.ACTION<enter>" "Save to Action mailbox"
+macro index,pager "<F3>" "<save-message>=INBOX.RESPOND<enter>" "Save to Respond mailbox"
+macro index,pager "<F4>" "<save-message>=INBOX.WAITFOR<enter>" "Save to Waitfor mailbox"
+macro index,pager "<F5>" "<save-message>=INBOX.ARCHIVE<enter>" "Save to Archive mailbox"
+
+# Source muttrc to ~ key
+macro index ~ ":source ~/.muttrc<enter>"
 
 # Dont ask re: moving messages
 unset confirmappend
