@@ -37,8 +37,12 @@ macro index,pager "<F3>" "<save-message>=INBOX.RESPOND<enter>" "Save to Respond 
 macro index,pager "<F4>" "<save-message>=INBOX.WAITFOR<enter>" "Save to Waitfor mailbox"
 macro index,pager "<F5>" "<save-message>=INBOX.ARCHIVE<enter>" "Save to Archive mailbox"
 
-# Source muttrc to ~ key
-macro index ~ ":source ~/.muttrc<enter>"
+# Change folder macros
+macro index "gi" "<change-folder>=INBOX<enter>"
+macro index "ga" "<change-folder>=INBOX.ACTION<enter>"
+macro index "gr" "<change-folder>=INBOX.RESPOND<enter>"
+macro index "gw" "<change-folder>=INBOX.WAITFOR<enter>"
+macro index "gd" "<change-folder>=INBOX.ARCHIVE<enter>"
 
 # Dont ask re: moving messages
 unset confirmappend
