@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 # Script to autoinstall and configure settings for vim, bash etc.
 
@@ -11,13 +11,24 @@ die() {
     exit 1
 }
 
+if [ -e "$HOME/.vim" ] ; then
+    echo "Replacing .vim"
+    rm -rf $HOME/.vim
+fi
+
+if [ -e "$HOME/.vimrc" ] ; then
+    echo "Replacing .vimrc"
+    rm -rf $HOME/.vimrc
+fi
+
 git clone git://github.com/jvc26/dotfiles.git
 
-cd dotfiles
+cd $HOME/dotfiles
 
 git submodule init
 git submodule update
 
-cd ~
-ln -s "dotfiles/.vimrc" .vimrc
+cd $HOME
+ln -s "dotfiles/.vimrc" $HOME/.vimrc
+ln -s "dotfiles/vim" $HOME/.vim
 #ln -s "dotfiles/.bashrc" .bashrc
