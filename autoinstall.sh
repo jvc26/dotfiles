@@ -2,15 +2,6 @@
 
 # Script to autoinstall and configure settings for vim, bash etc.
 
-warn() {
-    echo "$1" >&2
-}
-
-die() {
-    warn "$1"
-    exit 1
-}
-
 if [ -d "$HOME/.vim" ] ; then
     echo "Replacing .vim"
     rm -rf $HOME/.vim
