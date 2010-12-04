@@ -1,1 +1,1 @@
-vim/external/vim-pathogen/vim-pathogen.git
+pathogen.vim
