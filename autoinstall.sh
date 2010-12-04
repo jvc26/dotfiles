@@ -12,9 +12,6 @@ if [ -h "$HOME/.vimrc" ] ; then
     rm -rf $HOME/.vimrc
 fi
 
-git clone git://github.com/jvc26/dotfiles.git
-
-cd $HOME/dotfiles
 git submodule init
 git submodule update
 
