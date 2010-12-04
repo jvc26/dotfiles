@@ -11,12 +11,12 @@ die() {
     exit 1
 }
 
-if [ -e "$HOME/.vim" ] ; then
+if [ -d "$HOME/.vim" ] ; then
     echo "Replacing .vim"
     rm -rf $HOME/.vim
 fi
 
-if [ -e "$HOME/.vimrc" ] ; then
+if [ -h "$HOME/.vimrc" ] ; then
     echo "Replacing .vimrc"
     rm -rf $HOME/.vimrc
 fi
