@@ -22,7 +22,7 @@ set ofu=syntaxcomplete#Complete
 " Visual Settings
 set showmatch " Show matching brackets
 set mat=5 " How long to flash matching brackets
-set visualbell " No blinking
+set visualbell 
 
 " Tabs and indents
 set tabstop=4
@@ -65,7 +65,6 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-
 " Make j and k do expected action on long, wrapped lines
 nnoremap j gj
 nnoremap k gk
@@ -84,8 +83,6 @@ endif
 
 " Set the tex_flavour for LaTeX
 let g:tex_flavor='xelatex'
-
-map <F12> <Esc>:! xelatex '%'<CR>
 
 " If we have any user/machine specific settings source them
 if filereadable('~/.vim/user.vim')
