@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 # Script to autoinstall and configure settings for vim, bash etc.
 
@@ -21,6 +21,13 @@ if [ -f "$HOME/.tmux.conf" ] ; then
     rm -rf $HOME/.tmux.conf
     echo "Replacing .tmux.conf"
     ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+fi
+
+if [ -f "$HOME/.muttrc" ] ;  then
+    echo "Removing ,muttrc"
+    rm -rf $HOME/.muttrc
+    echo "Replacing .muttrc"
+    ln -s $HOME/dotfiles/.muttrc $HOME/.muttrc
 fi
 
 git submodule init
