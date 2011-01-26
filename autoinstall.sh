@@ -30,5 +30,12 @@ if [ -f "$HOME/.muttrc" ] ;  then
     ln -s $HOME/dotfiles/.muttrc $HOME/.muttrc
 fi
 
+if [ -f "$HOME/.bashrc" ] ; then
+    echo "Removing .bashrc"
+    rm -rf $HOME/bashrc
+    echo "Replacing .bashrc"
+    ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
+fi
+
 git submodule init
 git submodule update
