@@ -101,6 +101,7 @@ fi
 # some more ls aliases
 alias ll='ls -l'
 alias la='ls -la'
+alias tatch='tmux attach-session -t jvc26'
 
 # enable programmable completion features (unless they're there already)
 if [ ! "$BASH_COMPLETION" -a -f /etc/bash_completion ]; then
