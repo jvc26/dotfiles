@@ -24,7 +24,7 @@ if [ -f "$HOME/.tmux.conf" ] ; then
 fi
 
 if [ -f "$HOME/.muttrc" ] ;  then
-    echo "Removing ,muttrc"
+    echo "Removing .muttrc"
     rm -rf $HOME/.muttrc
     echo "Replacing .muttrc"
     ln -s $HOME/dotfiles/.muttrc $HOME/.muttrc
