@@ -74,6 +74,11 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 	debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# allow local overrides (including user/host colour changes)
+if [ -f ~/.bashrc.local ]; then
+	. ~/.bashrc.local
+fi
+
 # overly fancy prompt :)
 PS1="${debian_chroot:+($debian_chroot)}"'$(c=$? ; if [ $c -ne 0 ] ; then echo -ne "\[\033[0;1;31m\]"; if [ $c -gt 128 -a $c -le 192 ] ; then echo -n "$( kill -l $(($c - 128)) ) " ; else echo -n "$c " ; fi ; fi)\[\033[0;36m\]\t $(jobs=$(jobs 2>/dev/null | sed "s/^.*\\[\\([0-9]\\+\\)\\][^A-Z]*\\([A-Z]\\).*/\\1\\l\\2/" ) ; [ "$jobs" != "" ] && echo -ne "\[\033[1;33m\]["$jobs"] ")\[\033[0;36m\]!\! \[\033[1;'$USERCOLOUR'm\]\u\[\033[1;'$ATCOLOUR'm\]@\[\033[1;'$HOSTCOLOUR'm\]\h\[\033[0m\]:\[\033[1;34m\]\w\[\033[0;1m\]$(findvcs)\[\033['$DOLLARCOLOUR'm\]\$\[\033[0m\] '
 
@@ -108,9 +113,4 @@ if [ ! "$BASH_COMPLETION" -a -f /etc/bash_completion ]; then
 	[ "$TERM" != "dumb" ] && echo -ne "[___]\r"
 	. /etc/bash_completion
 	[ "$TERM" != "dumb" ] && echo -ne "\r     \r"
-fi
-
-# allow local overrides
-if [ -f ~/.bashrc.local ]; then
-	. ~/.bashrc.local
 fi
