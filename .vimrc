@@ -83,6 +83,9 @@ endif
 
 " Set the tex_flavour for LaTeX
 let g:tex_flavor='xelatex'
+let g:Tex_CompileRule_pdf='xelatex -interaction=nonstopmode $*'
+let g:Tex_CompileRule_dvi='xelatex -interaction=nonstopmode $*'
+let g:Tex_CompileRule_ps='xelatex -interaction=nonstopmode $*'
 
 " If we have any user/machine specific settings source them
 if filereadable('~/.vim/user.vim')
