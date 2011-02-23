@@ -3,6 +3,7 @@ lang: <none>
 type: positive
 ---
 AHx
+APCs
 ATPase
 Abx
 Acinar
@@ -22,6 +23,8 @@ Anti-CCP
 Anti-GBM
 Aortitis
 Apophysitis
+Apoptotic
+Arthralgia
 Arthrodesis
 Arthropathy
 Arthroplasty
@@ -38,11 +41,13 @@ Bimanual
 Binswanger
 Bisphosphonates
 Bouchard's
+Brodie's
 Calcaneal
 Calcaneum
 Calcinosis
 Calyces
 Canavan
+Caseating
 Cauda
 Cavus
 Chiari
@@ -74,6 +79,7 @@ Descemet
 Dessicans
 Discitis
 Dural
+E-selectin
 Enterobacter
 Enthesitis
 Eosinophils
@@ -85,6 +91,7 @@ Exophytic
 FENa
 Fhx
 Fibrinous
+Fibrotic
 FimH
 Fistulae
 Flexion
@@ -138,6 +145,7 @@ Interossei
 Interphalangeal
 Intraductal
 Ischaemia
+Ischaemic
 Kaiser-Fleischer
 Kienboch's
 Kimmelsteil-Wilson
@@ -147,6 +155,7 @@ Kohler's
 Krabbe
 LNs
 Langerhans
+Leucocytosis
 Leukodystrophies
 Lewy
 Liftoff
@@ -178,6 +187,7 @@ Mucinous
 Mucosal
 Multicentric
 Muscularis
+Myalgia
 Myelin
 NSAIDs
 Neisseria
@@ -233,6 +243,7 @@ Parkinsonism
 Pathophysiology
 Pelviureteric
 Perianal
+Pericarditis
 Periosteal
 Periportal
 Peroneal
@@ -243,11 +254,14 @@ PiZZ
 Plantarflexion
 Planus
 Podocyte
+Polyarthralgia
 Polycythemia
 Polymyalgia
+Poncet's
 Popliteal
 Posterolateral
 Postrenal
+Pott's
 Prepatellar
 Prerenal
 Prion
@@ -271,9 +285,9 @@ Retroperitoneal
 RhF
 Rheumatica
 Ro
+SEs
 Schoeber's
 Schwann
-SEs
 Schöber's
 Secondaries
 Sequelae
@@ -302,6 +316,7 @@ Syringomyelia
 TEDs
 Tabes
 Thenar
+Thrombocytopenia
 Thyroidisation
 Tibial
 Tibialis
@@ -336,6 +351,7 @@ adenomas
 adhesin
 adrenocortical
 agenesis
+alopecia
 alta
 aminoglycosides
 amitriptyline
@@ -345,11 +361,14 @@ amyloidosis
 anaplasia
 anginosus
 angiogenic
+angulation
 ank
 ankylosis
 anoxia
 anterolateral
 anti-GBM
+anti-Ro
+antiphospholipid
 antitrypsin
 anuria
 apophysitis
@@ -357,12 +376,14 @@ apoptosis
 apraxia
 apyrexial
 arachidonic
+arthralgia
 arthrodesis
 arthropathy
 arthroplasty
 arthroscopically
 arylamines
 astrocytes
+atheroma
 atresia
 atypia
 aureus
@@ -376,6 +397,8 @@ bicipital
 bifida
 bimanually
 blastermal
+bleb
+blebs
 blenorrhagica
 bradykinesia
 brainstem
@@ -392,6 +415,7 @@ calyceal
 calyces
 capitulum
 captopril
+cardiomyopathy
 catecholaminergic
 cauda
 cavus
@@ -492,8 +516,8 @@ faecalis
 falx
 fasciitis
 ferritin
-fibrillary
 festinating
+fibrillary
 fibroblastic
 fibrogenesis
 fibromas
@@ -513,6 +537,7 @@ footdrop
 foramen
 fossa
 fulminant
+gibbus
 glenohumeral
 glial
 gliosis
@@ -521,6 +546,8 @@ glomeruli
 glomerulonephritis
 glomerulosclerosis
 glomerulus
+gonococcaemia
+gonorrhoeae
 granulomas
 gummas
 gyrus
@@ -546,6 +573,7 @@ hepcidin
 heterozygotes
 hindfoot
 hippocampus
+histone
 homogenous
 homozygotes
 humoral
@@ -575,14 +603,17 @@ hypothenar
 hypotonia
 hypovolaemia
 ileus
+immunocompromise
 immunocompromised
 immunofluorescence
 immunogenic
 immunoglobulin
 immunohistochemistry
+immunosuppressed
 immunosuppression
 immunosuppressive
 incl
+influenzae
 infrapatellar
 infraspinatus
 inspissated
@@ -595,6 +626,7 @@ interossei
 interspace
 interspinous
 interstitium
+intervertebral
 intraarticular
 intracranial
 intraductal
@@ -668,6 +700,7 @@ mucinous
 mucosal
 multifocal
 multinucleate
+multisystem
 multisystemic
 muscularis
 musculoskeletal
@@ -680,6 +713,7 @@ myeloproliferative
 myoclonic
 myoglobin
 myoglobinaemia
+myositis
 navicular
 necrotising
 necrotizing
@@ -755,10 +789,12 @@ perivascularly
 peroneal
 peroxidation
 pes
+phagocytic
 phagocytose
 phagocytosed
 phospholipases
 photophobia
+photosensitivity
 physis
 plantarflex
 plantarflexion
@@ -768,6 +804,7 @@ pneumoniae
 podocyte
 podocytes
 pollicis
+polyarthritis
 polycystic
 polycythemia
 polygenetic
@@ -790,6 +827,7 @@ proto-oncogene
 pruritis
 pseudocysts
 pseudogout
+psoas
 psoriatic
 pulposus
 pulsatile
@@ -863,12 +901,14 @@ synovectomy
 synovial
 synovitic
 synovitis
+synovium
 talo-fibular
 tendinopathy
 tendinosis
 tendonisis
 tendonitis
 tendonosis
+tenosynovitis
 tentorium
 thenar
 thoracolumbar
@@ -881,6 +921,7 @@ tophi
 tragus
 triphasic
 trochanter
+trochanteric
 tuberculoma
 tuberosity
 tubulointerstitial
@@ -890,6 +931,7 @@ ureteral
 uretovesical
 urothelial
 urothelium
+urticaria
 uveitis
 vW
 vacuo
