@@ -1,0 +1,46 @@
+% LaTeX Template for revision notes (note using XeTeX for ligatures etc.)
+% by James Clemence <james@jvc26.org>
+% latest revision: 16 Mar 2011
+
+\documentclass[]{article}
+\usepackage{a4wide} 
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{fontspec, graphicx}
+\usepackage[usenames]{color}
+
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{GaramondPremrPro}
+\definecolor{Grey}{rgb}{.7,.7,.7}
+
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+
+\newcommand{\filename}{<++>}
+\newcommand{\subject}{<++>}
+\newcommand{\name}{JV Clemence}
+
+\newcommand{\ftstyle}[1]{\color{Grey} #1}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+
+\lhead{\name}
+\rhead{\subject}
+
+\lfoot{\ftstyle{\thepage}} 
+\cfoot{\ftstyle{Last updated: \today\-}}
+\rfoot{\ftstyle{\filename}}
+
+\begin{document}
+
+\begin{center}\Huge \filename\end{center}
+
+<++>
+
+\end{document}
