@@ -1,0 +1,55 @@
+% Longhand notes style file for XeLateX
+% jvc26 2011
+
+% Prelim
+\ProvidesPackage{jvc26-longhand}
+
+% Packages
+\RequirePackage{multicol}
+\RequirePackage{fancyhdr}
+\RequirePackage{xunicode}
+\RequirePackage{xltxtra}
+\RequirePackage{fontspec}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+
+% Margins
+\setlength\oddsidemargin   {36.1\p@}
+\setlength\evensidemargin  {36.1\p@}
+\setlength\marginparwidth  {40\p@}
+
+% Font settings
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[Ligatures=Common]{GaramondPremrPro}
+
+% Grey for footer
+\definecolor{Grey}{rgb}{.7,.7,.7}
+
+% Nice blue for definitions
+\definecolor{Definition}{HTML}{B3ECFF}
+
+% Larger fonts for emphasis
+\newcommand{\emp}[1]{{\LARGE{#1}}}
+
+% Paragraph settings
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+
+% Options for setting filename etc
+\newcommand{\filename}{<++>}
+\newcommand{\subject}{<++>}
+\newcommand{\name}{JV Clemence}
+
+\newcommand{\ftstyle}[1]{\color{Grey} #1}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+
+\lhead{\name}
+\rhead{\subject}
+
+\lfoot{\ftstyle{\thepage}} 
+\cfoot{\ftstyle{Last updated: \today\-}}
+\rfoot{\ftstyle{\filename}}
