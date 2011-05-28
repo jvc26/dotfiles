@@ -13,10 +13,13 @@
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
 
-% Margins
-\setlength\oddsidemargin   {36.1\p@}
-\setlength\evensidemargin  {36.1\p@}
-\setlength\marginparwidth  {40\p@}
+% Margin setup
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
 
 % Font settings
 \defaultfontfeatures{Mapping=tex-text}
@@ -39,6 +42,8 @@
 \newcommand{\filename}{<++>}
 \newcommand{\subject}{<++>}
 \newcommand{\name}{JV Clemence}
+
+\newcommand{\heading}{\begin{center}\Huge \filename\end{center}}
 
 \newcommand{\ftstyle}[1]{\color{Grey} #1}
 
