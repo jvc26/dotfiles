@@ -28,11 +28,13 @@
 % Grey for footer
 \definecolor{Grey}{rgb}{.7,.7,.7}
 
-% Nice blue for definitions
-\definecolor{Definition}{HTML}{B3ECFF}
+% Blue for definitions
+\definecolor{definition}{HTML}{B3ECFF}
 
 % Larger fonts for emphasis
 \newcommand{\emp}[1]{{\LARGE{#1}}}
+
+\newcommand{\defn}[1]{{\colorbox{definition}{#1}}}
 
 % Paragraph settings
 \setlength{\parindent}{0.0in}
@@ -43,6 +45,7 @@
 \newcommand{\subject}{<++>}
 \newcommand{\name}{JV Clemence}
 
+% Commands for page setup, headers and footers
 \newcommand{\heading}{\begin{center}\Huge \filename\end{center}}
 
 \newcommand{\ftstyle}[1]{\color{Grey} #1}
