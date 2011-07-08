@@ -26,9 +26,9 @@ set -b
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-HOSTCOLOUR=37 # white
-USERCOLOUR=37 # white
-ATCOLOUR=33 # yellow
+HOSTCOLOUR=30 #black
+USERCOLOUR=30 #black
+ATCOLOUR=34 #blue
 
 function findupwards() {
 	readlink -f . &>/dev/null || return 1
