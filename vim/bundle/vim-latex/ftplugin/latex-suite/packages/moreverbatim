@@ -1,6 +1,6 @@
-let g:TeX_package_option_moreverb = ''
+let g:TeX_package_option_moreverbatim = ''
 
-let g:TeX_package_moreverb = 
+let g:TeX_package_moreverbatim = 
 \ 'ens:verbatimwrite:{<++>},'
 \.'ens:verbatimtab:[<++>],'
 \.'ens:listing:[<+step+>]{<+number+>},'
@@ -10,8 +10,6 @@ let g:TeX_package_moreverb =
 \.'bra:listingoffset,'
 \.'brs:listinginput[<++>]{<++>}{<++>},'
 \.'brs:verbatimtabinput[<++>]{<++>}'
-
-let g:Tex_completion_explorer = g:Tex_completion_explorer.'verbatimtabinput,'
 
 syn region texZone   start="\\begin{verbatimwrite}"  end="\\end{verbatimwrite}\|%stopzone\>" fold
 syn region texZone   start="\\begin{verbatimtab}"    end="\\end{verbatimtab}\|%stopzone\>" fold

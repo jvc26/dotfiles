@@ -1,8 +1,3 @@
-if exists("array_package_file")
-	finish
-endif
-let array_package_file = 1
-
 let g:TeX_package_option_array = ''
 
 let g:TeX_package_array  = 

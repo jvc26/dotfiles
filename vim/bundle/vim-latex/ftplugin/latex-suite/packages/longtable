@@ -1,8 +1,3 @@
-if exists("longtable_package_file")
-	finish
-endif
-let longtable_package_file = 1
-
 let g:TeX_package_option_longtable = 
 \ 'errorshow,'
 \.'pausing,'

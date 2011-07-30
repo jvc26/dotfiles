@@ -5,11 +5,14 @@
 "     Created: Wen Apr 16 05:00 PM 2003
 " 
 "  Description: Handling tex projects.
+"  
 "=============================================================================
 
-let s:path = fnameescape(expand("<sfile>:p:h"))
+let s:path = expand("<sfile>:p:h")
 
 command! -nargs=0 TProjectEdit  :call <SID>Tex_ProjectEdit()
+command! -nargs=0 TProjectWrite :call <SID>Tex_ProjectWrite()
+command! -nargs=0 TProject      :call <SID>Tex_Project()
 
 " Tex_ProjectEdit: Edit project file " {{{
 " Description: If project file exists (*.latexmain) open it in window created
@@ -19,36 +22,52 @@ command! -nargs=0 TProjectEdit  :call <SID>Tex_ProjectEdit()
 function! s:Tex_ProjectEdit()
 
 	let file = expand("%:p")
-	let mainfname = Tex_GetMainFileName()
-	if glob(mainfname.'.latexmain') != ''
-		exec 'split '.fnameescape(mainfname.'.latexmain')
+	if Tex_GetMainFileName() != ''
+		exe 'split '.Tex_GetMainFileName(":p")
 	else
-		echohl WarningMsg
-		echomsg "Master file not found."
-		echomsg "    :help latex-master-file"
-		echomsg "for more information"
-		echohl None
+		exe 'split '.escape(s:path.'/projecttemplate.vim', ' ')
+		exe 'saveas '.escape(file.'.latexmain', ' ')
+		let g:Tex_ProjectExists = 1
 	endif
 
 endfunction " }}}
-" Tex_ProjectLoad: loads the .latexmain file {{{
-" Description: If a *.latexmain file exists, then sources it
-function! Tex_ProjectLoad()
-	let s:origdir = fnameescape(getcwd())
-	exe 'cd '.fnameescape(expand('%:p:h'))
+" Tex_ProjectWrite: write project and source it to refresh changed vars {{{
+" Description: 
+"
+function! s:Tex_ProjectWrite()
 
-	if glob(Tex_GetMainFileName(':p').'.latexmain') != ''
-		call Tex_Debug("Tex_ProjectLoad: sourcing [".Tex_GetMainFileName().".latexmain]", "proj")
-               exec 'source '.fnameescape(Tex_GetMainFileName().'.latexmain')
+	if expand("%") =~ 'latexmain$'
+		write!
+		exe 'source '.Tex_GetMainFileName(":p")
+		q
+	else
+		echoerr "Sorry, this is not project file"
+		return
 	endif
-	
-	exe 'cd '.s:origdir
+
+endfunction " }}}
+" Tex_Project: open project view in explorer {{{
+" Description:
+"
+function! s:Tex_Project()
+
+	if g:Tex_ProjectExists == 1
+		new
+		let w:projView = 1
+		:Explore
+	else
+		echoerr "Sorry, no project file exists"
+		finish
+	endif
+
 endfunction " }}}
 
-augroup LatexSuite
-	au LatexSuite User LatexSuiteFileType 
-		\ call Tex_Debug("texproject.vim: catching LatexSuiteFileType event", "proj") |
-		\ call Tex_ProjectLoad()
-augroup END
+" Load project file if exists
+if Tex_GetMainFileName() != '' && Tex_GetMainFileName(':e') == 'latexmain'
+	exe 'source '.Tex_GetMainFileName(":p")
+	let g:Tex_ProjectExists = 1
+else
+	let g:Tex_ProjectExists = 0
+endif
 
 " vim:fdm=marker:ff=unix:noet:ts=4:sw=4

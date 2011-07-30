@@ -1,8 +1,3 @@
-if exists("acromake_package_file")
-	finish
-endif
-let acromake_package_file = 1
-
 let g:TeX_package_option_acromake = ''
 
 let g:TeX_package_acromake = 'brs:acromake{<++>}{<++>}{<++>}'

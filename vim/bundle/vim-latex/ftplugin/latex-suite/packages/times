@@ -1,8 +1,3 @@
-if exists("times_package_file")
-	finish
-endif
-let times_package_file = 1
-
 let g:TeX_package_option_times = ''
 
 let g:TeX_package_times = ''

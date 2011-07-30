@@ -1,8 +1,3 @@
-if exists("overcite_package_file")
-	finish
-endif
-let overcite_package_file = 1
-
 let g:TeX_package_option_overcite = 
 \ 'verbose,'
 \.'ref,'
