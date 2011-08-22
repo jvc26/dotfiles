@@ -1,7 +1,7 @@
 # jvc26 .bashrc 2010
 # Thanks to mas90 for some of the bash prompt skills
 
-export PATH="~/bin:/sbin:/usr/sbin:/usr/local/sbin:$PATH"
+export PATH="/var/lib/gems/1.8/bin:~/bin:/sbin:/usr/sbin:/usr/local/sbin:$PATH"
 [ -x /usr/bin/vim ] && export EDITOR=/usr/bin/vim
 export FQDN="`hostname -f 2>/dev/null || hostname`"
 export IP="`hostname -i 2>/dev/null`"
