@@ -30,6 +30,10 @@ HOSTCOLOUR=30 #black
 USERCOLOUR=30 #black
 ATCOLOUR=34 #blue
 
+case $FQDN in
+    *.cambridgemedicine.org) HOSTCOLOR=1;34;;
+esac
+
 function findupwards() {
 	readlink -f . &>/dev/null || return 1
 	d=$(readlink -f .)
