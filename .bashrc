@@ -109,6 +109,8 @@ if [ "$TERM" != "dumb" ]; then
 	alias egrep='egrep --color=auto'
 	alias pcregrep='pcregrep --color=auto'
 	alias zgrep='zgrep --color=auto'
+	alias 256term="export TERM='xterm-256color'"
+	alias tmux2='tmux -2'
 fi
 
 # enable programmable completion features (unless they're there already)
