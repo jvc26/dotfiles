@@ -102,16 +102,14 @@ esac
 if [ "$TERM" != "dumb" ]; then
 	eval "`dircolors -b &>/dev/null`"
 	alias ls='ls --color=auto'
+    alias ll='ls -l --color=auto'
+    alias la='ls -la --color=auto'
 	alias grep='grep --color=auto'
 	alias fgrep='fgrep --color=auto'
 	alias egrep='egrep --color=auto'
 	alias pcregrep='pcregrep --color=auto'
 	alias zgrep='zgrep --color=auto'
 fi
-
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -la'
 
 # enable programmable completion features (unless they're there already)
 if [ ! "$BASH_COMPLETION" -a -f /etc/bash_completion ]; then
