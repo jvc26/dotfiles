@@ -81,6 +81,12 @@ if has('relativenumber')
     set relativenumber
 endif
 
+" If we're on a 256 colour terminal, use desert256
+if $TERM == 'xterm-256color'
+    set t_Co=256
+    colorscheme desert256
+endif
+
 " Set the tex_flavour for LaTeX
 let g:tex_flavor='xelatex'
 let g:Tex_CompileRule_pdf='xelatex -interaction=nonstopmode $*'
