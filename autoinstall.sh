@@ -44,3 +44,13 @@ fi
 
 git submodule init
 git submodule update
+
+# Link desert256 theme into the correct place
+if [ -f "$HOME/.vim/colors/desert256.vim" ]
+then
+    echo "Linking desert256 theme"
+    ln -s $HOME/.vim/colors/desert256/colors/desert256.vim $HOME/.vim/colors/desert256.vim
+else
+    echo "Installing desert256 theme"
+    ln -s $HOME/.vim/colors/desert256/colors/desert256.vim $HOME/.vim/colors/desert256.vim
+fi
