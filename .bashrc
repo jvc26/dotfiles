@@ -31,7 +31,9 @@ USERCOLOUR=30 #black
 ATCOLOUR=34 #blue
 
 case $FQDN in
-    *.cambridgemedicine.org) HOSTCOLOUR="\[\033[1;34\]";;
+    *.cambridgemedicine.org) HOSTCOLOUR=32 ;;
+    *.srcf.ucam.org) HOSTCOLOUR=36 ;;
+    *.clare.cam.ac.uk) HOSTCOLOUR=35 ;;
 esac
 
 function findupwards() {
