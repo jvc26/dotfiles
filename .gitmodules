@@ -10,9 +10,6 @@
 [submodule "vim/external/vim-pathogen"]
 	path = vim/external/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim/colors/desert256"]
-	path = vim/colors/desert256
-	url = https://github.com/vim-scripts/desert256.vim.git
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/hallison/vim-markdown.git
