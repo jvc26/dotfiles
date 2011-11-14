@@ -13,3 +13,6 @@
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/hallison/vim-markdown.git
+[submodule "vim/external/dotfiles-private"]
+	path = vim/external/dotfiles-private
+	url = git@bitbucket.org:jvc26/dotfiles-private.git
