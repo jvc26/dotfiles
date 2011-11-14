@@ -44,3 +44,8 @@ fi
 
 git submodule init
 git submodule update
+
+if [ -d "$HOME/dotfiles/private" ]
+then
+    sh $HOME/dotfiles/private/setup.sh
+fi
