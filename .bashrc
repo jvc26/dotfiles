@@ -104,14 +104,12 @@ if [ "$TERM" != "dumb" ]; then
 	alias ls='ls --color=auto'
     alias ll='ls -l --color=auto'
     alias la='ls -la --color=auto'
+    alias gist='git status'
 	alias grep='grep --color=auto'
 	alias fgrep='fgrep --color=auto'
 	alias egrep='egrep --color=auto'
 	alias pcregrep='pcregrep --color=auto'
 	alias zgrep='zgrep --color=auto'
-	alias 256term="export TERM='xterm-256color'"
-	# 256 color enabled tmux
-	alias 2mux='tmux -2'
 fi
 
 # enable programmable completion features (unless they're there already)
