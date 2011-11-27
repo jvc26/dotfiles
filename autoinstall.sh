@@ -2,14 +2,7 @@
 
 # Script to autoinstall and configure settings for vim, bash etc.
 
-submods(){
-    git submodule add https://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git vim/bundle/vim-latex
-    git submodule add https://github.com/kchmck/vim-coffee-script.git vim/bundle/vim-coffee-script
-    git submodule add https://github.com/tpope/vim-fugitive.git vim/bundle/vim-fugitive
-    git submodule add https://github.com/tpope/vim-pathogen.git vim/external/vim-pathogen
-    git submodule add https://github.com/hallison/vim-markdown.git vim/bundle/vim-markdown
-    git submodule add https://jvc26@github.com/jvc26/vim-puppet.git vim/bundle/vim-puppet
-    git submodule add https://github.com/gregsexton/MatchTag.git vim/bundle/vim-matchtag
+function gitmodinit(){
     git submodule init
     git submodule update
 }
@@ -17,8 +10,6 @@ submods(){
 while getopts ':p' opt; do
     case $opt in
         p)
-            git submodule add git@bitbucket.org:jvc26/dofiles-private.git private
-            submods
             if [ -d "$HOME/dotfiles/private" ]
                 then
                     sh $HOME/dotfiles/private/setup.sh
@@ -30,10 +21,7 @@ while getopts ':p' opt; do
     esac
 done
 
-if [ ! -d "$HOME/dotfiles/private" ]
-then
-    submods
-fi
+gitmodinit
 
 if [ -d "$HOME/.vim" ] 
 then
