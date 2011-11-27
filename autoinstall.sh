@@ -20,7 +20,7 @@ while getopts ':p' opt; do
     esac
 done
 
-if ! [-d "$HOME/dotfiles/private" ]
+if [ ! -d "$HOME/dotfiles/private" ]
 then
     git submodule init
     git submodule update
