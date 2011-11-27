@@ -19,3 +19,6 @@
 [submodule "vim/bundle/vim-puppet"]
 	path = vim/bundle/vim-puppet
 	url = git@github.com:jvc26/vim-puppet.git
+[submodule "vim/bundle/vim-matchtag"]
+	path = vim/bundle/vim-matchtag
+	url = https://github.com/gregsexton/MatchTag.git
