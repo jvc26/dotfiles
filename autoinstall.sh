@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 # Script to autoinstall and configure settings for vim, bash etc.
 
@@ -17,7 +17,7 @@ submods(){
 while getopts ':p' opt; do
     case $opt in
         p)
-            git submodule add git@bitbucket.org:jvc26/dofiles-private.git $HOME/dotfiles/private
+            git submodule add git@bitbucket.org:jvc26/dofiles-private.git private
             submods
             if [ -d "$HOME/dotfiles/private" ]
                 then
