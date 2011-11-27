@@ -2,6 +2,30 @@
 
 # Script to autoinstall and configure settings for vim, bash etc.
 
+while getopts ':p' opt; do
+    case $opt in
+        p)
+            git submodule add git@bitbucket.org:jvc26/dofiles-private.git $HOME/dotfiles/private
+            git submodule init
+            git submodule update
+
+            if [ -d "$HOME/dotfiles/private" ]
+                then
+                    sh $HOME/dotfiles/private/setup.sh
+            fi
+            ;;
+        \?)
+            echo "Invalid option: -$OPTARG" >&2
+            ;;
+    esac
+done
+
+if ! [-d "$HOME/dotfiles/private" ]
+then
+    git submodule init
+    git submodule update
+fi
+
 if [ -d "$HOME/.vim" ] 
 then
     echo "Replacing .vim/"
@@ -40,12 +64,4 @@ then
 else
     echo "Inserting .bashrc"
     ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
-fi
-
-git submodule init
-git submodule update
-
-if [ -d "$HOME/dotfiles/private" ]
-then
-    sh $HOME/dotfiles/private/setup.sh
 fi
