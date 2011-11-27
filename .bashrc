@@ -75,6 +75,12 @@ function findvcs() {
 	fi
 }
 
+function p-mkmod() {
+    mkdir "$1"
+    mkdir "$1/files" "$1/lib" "$1/manifests" "$1/templates" "$1/tests"
+    git init $1
+}
+
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 	debian_chroot=$(cat /etc/debian_chroot)
