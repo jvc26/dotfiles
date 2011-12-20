@@ -13,15 +13,15 @@
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/hallison/vim-markdown.git
-[submodule "private"]
-	path = private
-	url = git@bitbucket.org:jvc26/dotfiles-private.git
 [submodule "vim/bundle/vim-puppet"]
 	path = vim/bundle/vim-puppet
-	url = git@github.com:jvc26/vim-puppet.git
+	url = https://jvc26@github.com/jvc26/vim-puppet.git
 [submodule "vim/bundle/vim-matchtag"]
 	path = vim/bundle/vim-matchtag
 	url = https://github.com/gregsexton/MatchTag.git
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "private"]
+	path = private
+	url = git@bitbucket.org:jvc26/dotfiles-private.git

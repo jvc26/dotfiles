@@ -2,6 +2,27 @@
 
 # Script to autoinstall and configure settings for vim, bash etc.
 
+function gitmodinit(){
+    git submodule init
+    git submodule update
+}
+
+while getopts ':p' opt; do
+    case $opt in
+        p)
+            if [ -d "$HOME/dotfiles/private" ]
+                then
+                    sh $HOME/dotfiles/private/setup.sh
+            fi
+            ;;
+        \?)
+            echo "Invalid option: -$OPTARG" >&2
+            ;;
+    esac
+done
+
+gitmodinit
+
 if [ -d "$HOME/.vim" ] 
 then
     echo "Replacing .vim/"
@@ -40,12 +61,4 @@ then
 else
     echo "Inserting .bashrc"
     ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
-fi
-
-git submodule init
-git submodule update
-
-if [ -d "$HOME/dotfiles/private" ]
-then
-    sh $HOME/dotfiles/private/setup.sh
 fi
