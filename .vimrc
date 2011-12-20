@@ -34,6 +34,8 @@ set smarttab
 
 " Always turn syntax highlighting on
 syntax enable
+set background=dark
+colorscheme solarized
 
 set showmode
 set showcmd
@@ -78,12 +80,6 @@ set nobackup
 " relativenumber is only available >2.3
 if has('relativenumber')
     set relativenumber
-endif
-
-" If we're on a 256 colour terminal, use desert256
-if $TERM == 'xterm-256color'
-    set t_Co=256
-    colorscheme desert256
 endif
 
 " Set the tex_flavour for LaTeX
