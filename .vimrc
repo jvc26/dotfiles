@@ -96,3 +96,11 @@ endif
 if filereadable('~/.vim/machine.vim')
     source ~/.vim/machine.vim
 endif
+
+" Handle funny TERM quirks in vim
+if $TERM =~ '^screen-256color'
+    nmap <Esc>OH <Home>
+    imap <Esc>OH <Home>
+    nmap <Esc>OF <End>
+    imap <Esc>OF <End>
+endif
