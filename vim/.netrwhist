@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/etc/apt/sources.list.d'
-let g:netrw_dirhist_2='/home/jvc26/Projects/tech.cambridgemedicine.org/_sass'
-let g:netrw_dirhist_3='/etc/apt/sources.list.d'
-let g:netrw_dirhist_4='/home/jvc26/Projects/journalclub/app/models'
