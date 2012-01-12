@@ -20,13 +20,10 @@ Updates can then be committed to the repository via
 
     git commit
 
-Vim plugins at present have been taken from the following on github:
-
-* https://github.com/vim-scripts
-* https://github.com/tpope
-* https://github.com/kchmck
-* https://github.com/altercation
-* https://github.com/hallison
-* https://github.com/gregsexton
-* https://github.com/Lokaltog
-* https://github.com/jvc26
+Vim Plugins
+===========
+These are managed using vundle. For vundle docs please check out
+https://github.com/gmarik/vundle. Essentially vim plugins are added to the
+.vimrc and then installed using :BundleInstall. All plugins are managed in
+git and are updated when appropriate. This has removed a lot of submodule
+dependencies from the repository.
