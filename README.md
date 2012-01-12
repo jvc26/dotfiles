@@ -20,8 +20,13 @@ Updates can then be committed to the repository via
 
     git commit
 
-Vim plugins at present have come from:
+Vim plugins at present have been taken from the following on github:
 
-* http://github.com/vim-scripts
-* http://github.com/tpope
+* https://github.com/vim-scripts
+* https://github.com/tpope
 * https://github.com/kchmck
+* https://github.com/altercation
+* https://github.com/hallison
+* https://github.com/gregsexton
+* https://github.com/Lokaltog
+* https://github.com/jvc26
