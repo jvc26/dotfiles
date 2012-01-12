@@ -1,3 +1,4 @@
 private/*
 vim/bundle/*
 !vim/bundle/vundle
+.netrwhist
