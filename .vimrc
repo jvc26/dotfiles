@@ -1,8 +1,19 @@
 " jvc26 vimrc
-
-" Use pathogen for vim packages, fore reload after pathogen
 filetype off
-call pathogen#infect()
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Bundle my vim plugins
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+Bundle 'hallison/vim-markdown'
+Bundle 'gregsexton/MatchTag'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'jvc26/vim-puppet'
 
 filetype plugin indent on
 
