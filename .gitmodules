@@ -25,3 +25,6 @@
 [submodule "private"]
 	path = private
 	url = git@bitbucket.org:jvc26/dotfiles-private.git
+[submodule "vim/bundle/vim-powerline"]
+	path = vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
