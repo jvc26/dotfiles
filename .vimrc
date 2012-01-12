@@ -99,6 +99,7 @@ endif
 
 " Handle funny TERM quirks in vim
 if $TERM =~ '^screen-256color'
+    set t_Co=256
     nmap <Esc>OH <Home>
     imap <Esc>OH <Home>
     nmap <Esc>OF <End>
