@@ -62,3 +62,13 @@ else
     echo "Inserting .bashrc"
     ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
 fi
+
+if [ -f "$HOME/.zshrc" ]
+then
+    echo "Replacing .zshrc"
+    rm -rf $HOME/.zshrc
+    ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+else
+    echo "Inserting .zshrc"
+    ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+fi
