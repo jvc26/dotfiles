@@ -39,11 +39,11 @@ precmd () {
 
     # If we are within a VCS dir, load the two-line prompt
     if [[ ${vcs_info_msg_0_} != '' ]]; then
-        PS1='
+        PS1="
 %* [$?] ${vcs_info_msg_0_} %{$reset_color%}%~
-%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[$hostcolor]%}%m%{$reset_color%}%# '
+%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[$hostcolor]%}%m%{$reset_color%}%# "
     else 
-        PS1='%* [$?] %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~%# '
+        PS1="%* [$?] %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~%# "
     fi
 
 }
