@@ -33,10 +33,18 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 }
 
 precmd () {
-
+    # Load style info for vcs_info_msg
     zstyle ':vcs_info:*' formats "(%s) %F{cyan}[%f%F{yellow}%b%f%c%u%F{cyan}]%f"
-
     vcs_info
+
+    # If we are within a VCS dir, load the two-line prompt
+    if [[ ${vcs_info_msg_0_} != '' ]]; then
+        PS1='
+%* [$?] ${vcs_info_msg_0_} %{$reset_color%}%~
+%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[$hostcolor]%}%m%{$reset_color%}%# '
+    else 
+        PS1='%* [$?] %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~%# '
+    fi
 
 }
 
@@ -45,9 +53,6 @@ hostcolor=yellow
 # If there are local host-based colour changes to make
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local 
 
-PS1='
-%* [$?] ${vcs_info_msg_0_} %{$reset_color%}%~
-%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[$hostcolor]%}%m%{$reset_color%}%# '
 PS2='%* [$?] %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~%#_ '
 
 # Aliases
