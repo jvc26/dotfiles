@@ -44,7 +44,7 @@ hostcolor=yellow
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local 
 
 PS1='
-%* [$?] ${vcs_info_msg_0_} %{$reset_color%}%~
+%* $[HISTCMD-1] [$?] ${vcs_info_msg_0_} %{$reset_color%}%~
 %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[$hostcolor]%}%m%{$reset_color%}%# '
 
 PS2='%* [$?] %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~%#_ '
