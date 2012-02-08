@@ -63,11 +63,3 @@ alias pcregrep='pcregrep --color=auto'
 alias zgrep='zgrep --color=auto'
 
 alias tmux='TERM=screen-256color-bce tmux'
-
-# Suffix aliases
-alias -s tex=vim
-alias -s php=vim
-alias -s py=vim
-alias -s md=vim
-alias -s txt=vim
-alias -s pp=vim
