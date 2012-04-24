@@ -45,7 +45,7 @@ set smarttab
 
 " Always turn syntax highlighting on
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 
 set showmode
