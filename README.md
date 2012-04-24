@@ -1,5 +1,5 @@
-jvc26's dotfiles
-================
+# jvc26's dotfiles
+
 This contains the dotfiles which I use on a regular basis, as well
 as a few other bits and pieces such as my notes LaTeX stylefile.
 
@@ -8,20 +8,29 @@ git submodules, and so a --recursive call to git clone must be made
 
     git clone --recursive git://github.com/jvc26/dotfiles.git
 
-Submodules
-==========
+## Installation
+
+Installation of all symlinked files (with .symlink suffix) is handled via 
+the rakefile script from [Holman's repository](https://github.com/holman/dotfiles/blob/master/Rakefile).
+
+Files are added to their respective subdirs and then installed using :
+
+    rake install
+
+## Submodules
+
 Submodules can be added via:
 
     git submodule add <url> <path>
 
-Which will checkout the latest version, and update the .gitmodules 
-file with the correct path from which to find the repository.
-Updates can then be committed to the repository via
+Which will checkout the latest version, and update the .gitmodules file with 
+the correct path from which to find the repository. Updates can then be 
+committed to the repository via
 
     git commit
 
-Vim Plugins
-===========
+## Vim Plugins
+
 These are managed using vundle. For vundle docs please check out
 https://github.com/gmarik/vundle. Essentially vim plugins are added to the
 .vimrc and then installed using :BundleInstall. All plugins are managed in
