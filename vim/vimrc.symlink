@@ -77,18 +77,6 @@ set lazyredraw
 " No need for backup files
 set nobackup
 
-" Optional options, which are version dependent.
-" relativenumber is only available >2.3
-if has('relativenumber')
-    set relativenumber
-endif
-
-" Set the tex_flavour for LaTeX
-let g:tex_flavor='xelatex'
-let g:Tex_CompileRule_pdf='xelatex -interaction=nonstopmode $*'
-let g:Tex_CompileRule_dvi='xelatex -interaction=nonstopmode $*'
-let g:Tex_CompileRule_ps='xelatex -interaction=nonstopmode $*'
-
 " If we have any user/machine specific settings source them
 if filereadable('~/.vim/user.vim')
     source ~/.vim/user.vim
@@ -106,3 +94,16 @@ if $TERM =~ '^screen-256color'
     nmap <Esc>OF <End>
     imap <Esc>OF <End>
 endif
+
+
+" Neat function to toggle relative v absolute line numbers
+" from http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
