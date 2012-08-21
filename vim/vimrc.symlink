@@ -7,9 +7,6 @@ call vundle#rc()
 " Bundle my vim plugins
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'hallison/vim-markdown'
 Bundle 'gregsexton/MatchTag'
 Bundle 'Lokaltog/vim-powerline'
@@ -45,8 +42,6 @@ set smarttab
 
 " Always turn syntax highlighting on
 syntax enable
-set background=light
-colorscheme solarized
 
 set showmode
 set showcmd
