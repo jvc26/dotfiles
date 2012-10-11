@@ -63,3 +63,9 @@ alias pcregrep='pcregrep --color=auto'
 alias zgrep='zgrep --color=auto'
 
 alias tmux='TERM=screen-256color-bce tmux'
+
+# Include virtualenvwrapper
+source /etc/bash_completion.d/virtualenvwrapper
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
