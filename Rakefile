@@ -34,7 +34,7 @@ task :install do
   end
 
   if not File.exists?(ENV['HOME']+'/.vim/bundle')
-    `mkdir $HOME/.vim/bundle` 
+    `mkdir -p $HOME/.vim/bundle` 
     `git clone http://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle`
   else
     `git --git-dir=$HOME/.vim/bundle/vundle/.git pull`
