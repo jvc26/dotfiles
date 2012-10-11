@@ -32,6 +32,8 @@ task :install do
     end
     `ln -s "$PWD/#{linkable}" "#{target}"`
   end
+  `git clone http://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle`
+  `vim +BundleInstall +qall`
 end
 
 task :uninstall do
