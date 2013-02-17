@@ -11,6 +11,7 @@ Bundle 'gregsexton/MatchTag'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'jvc26/vim-puppet'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'ledger/vim-ledger'
 
 filetype plugin indent on
 
