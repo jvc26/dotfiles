@@ -80,8 +80,6 @@ alias gb='git branch'
 alias gs='git status -sb'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 # Include virtualenvwrapper
 if ! [ -f /etc/bash_completion.d/virtualenvwrapper ]
 then
