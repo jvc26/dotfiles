@@ -50,9 +50,9 @@ link_files () {
 install_dotfiles () {
   info 'installing dotfiles'
 
-  overwrite_all=false
-  backup_all=false
-  skip_all=false
+  overwrite_all="false"
+  backup_all="false"
+  skip_all="false"
 
   for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
   do
@@ -61,9 +61,9 @@ install_dotfiles () {
     if [ -f $dest ] || [ -d $dest ]
     then
 
-      overwrite=false
-      backup=false
-      skip=false
+      overwrite="false"
+      backup="false"
+      skip="false"
 
       if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
       then
@@ -72,17 +72,17 @@ install_dotfiles () {
 
         case "$action" in
           o )
-            overwrite=true;;
+            overwrite="true";;
           O )
-            overwrite_all=true;;
+            overwrite_all="true";;
           b )
-            backup=true;;
+            backup="true";;
           B )
-            backup_all=true;;
+            backup_all="true";;
           s )
-            skip=true;;
+            skip="true";;
           S )
-            skip_all=true;;
+            skip_all="true";;
           * )
             ;;
         esac
