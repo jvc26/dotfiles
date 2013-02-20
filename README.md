@@ -4,12 +4,11 @@ This contains my default dotfiles.
 
 ## Installation
 
-Installation of all symlinked files (with .symlink suffix) is handled via 
-the rakefile script from [Holman's repository](https://github.com/holman/dotfiles/blob/master/Rakefile).
+Installation links all files with a .symlink suffix to their appropriate locations under `$HOME` via the installation script from [@Holman](https://github.com/holman/dotfiles/blob/master/script/bootstrap).
 
-Files are added to their respective subdirs and then installed using :
+    $ scripts/bootstrap
 
-    rake install
+This is a major improvement since the prior iteration which required ruby (which I never used aside from installation). It also now includes virtualenv base configs, and some tweaks to ZSH aliases which I use regularly.
 
 ## Vim Plugins
 
