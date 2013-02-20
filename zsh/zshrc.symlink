@@ -58,22 +58,27 @@ PS1='
 PS2='%* [$?] %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~%#_ '
 
 # Aliases
+
+## Shell
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
 alias la='ls -la --color=auto'
 
-alias gist='git status'
-
+## Grep
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias pcregrep='pcregrep --color=auto'
-alias zgrep='zgrep --color=auto'
 
+## Tmux
 alias tmux='TERM=screen-256color-bce tmux'
 
-# Include virtualenvwrapper
-source /etc/bash_completion.d/virtualenvwrapper
+## Git (Via [@holman](https://github.com/holman/dotfiles/blob/master/git/aliases.zsh))
+alias gd='git diff'
+alias gp='git push origin HEAD'alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gc='git commit'
+alias gca='git commit -a'
+alias gco='git checkout'
+alias gb='git branch'
+alias gs='git status -sb'
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
