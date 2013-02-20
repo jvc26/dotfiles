@@ -112,6 +112,18 @@ install_dotfiles () {
     fi
 
   done
+
+  # Clone Vundle/Update if already installed
+  if ! [ -d "$HOME/.vim/bundle" ]
+  then
+    mkdir $HOME/.vim/bundle
+    git clone http://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
+  else
+    git --git-dir=$HOME/.vim/bundle/vundle/.git pull
+  fi
+
+  # Install all Bundles
+  vim +BundleInstall! +qall
 }
 
 # setup_gitconfig
