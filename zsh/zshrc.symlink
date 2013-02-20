@@ -7,7 +7,6 @@ setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt share_history
 
-
 # Colours and Prompt config
 autoload -Uz compinit
 autoload -U colors
@@ -36,6 +35,15 @@ precmd () {
     # Load style info for vcs_info_msg
     zstyle ':vcs_info:*' formats "(%s) %F{cyan}[%f%F{yellow}%b%f%c%u%F{cyan}]%f"
     vcs_info
+}
+
+# Terminal warnings
+warn () {
+    printf "\r\033[2K  [\033[0;33mWARN\033[0m] $1\n"
+}
+
+success () {
+    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
 }
 
 hostcolor=yellow
