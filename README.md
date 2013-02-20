@@ -14,3 +14,11 @@ This is a major improvement since the prior iteration which required ruby (which
 
 These are managed using vundle. Vundle docs can be found [here](https://github.com/gmarik/vundle). Essentially vim plugins are added to the
 .vimrc and then installed using :BundleInstall. The Rake install script will run BundleInstall as part of its first run process.
+
+## Acknowledgements
+
+Thanks to @Holman for his great [dotfiles](https://github.com/holman/dotfiles) which has offered two rounds of upgrades to the installation script. Also a note to @gmarik for the great [vundle](https://github.com/gmarik/vundle).
+
+## License
+
+Licensed under the MIT License.
