@@ -82,3 +82,11 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+# Include virtualenvwrapper
+if ! [ -f /etc/bash_completion.d/virtualenvwrapper ]
+then
+    warn "Virtualenvwrapper config not present where expected"
+else
+    source /etc/bash_completion.d/virtualenvwrapper
+    success "Virtualenvwrapper loaded"
+fi
