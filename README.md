@@ -17,7 +17,7 @@ These are managed using vundle. Vundle docs can be found [here](https://github.c
 
 ## Acknowledgements
 
-Thanks to @Holman for his great [dotfiles](https://github.com/holman/dotfiles) which has offered two rounds of upgrades to the installation script. Also a note to @gmarik for the great [vundle](https://github.com/gmarik/vundle).
+Thanks to [@Holman](https://github.com/holman/) for his [dotfiles](https://github.com/holman/dotfiles) repository which has offered two rounds of upgrades to the installation script. Also a note to [@gmarik](https://github.com/gmarik/vundle) for the great [vundle](https://github.com/gmarik/vundle).
 
 ## License
 
