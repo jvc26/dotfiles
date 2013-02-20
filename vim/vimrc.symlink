@@ -14,6 +14,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'jvc26/vim-puppet'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ledger/vim-ledger'
+Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 
 filetype plugin indent on
 
@@ -141,16 +142,3 @@ if $TERM =~ '^screen-256color'
     map <Esc>OF <End>
     map! <Esc>OF <End>
 endif
-
-
-" Neat function to toggle relative v absolute line numbers
-" from http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
-function! NumberToggle()
-    if(&relativenumber == 1)
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-
-nnoremap <C-n> :call NumberToggle()<cr>
