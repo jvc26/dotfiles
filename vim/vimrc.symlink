@@ -1,4 +1,6 @@
 " jvc26 vimrc
+" Recently pulled some of vim-sensible from @tpope
+" https://github.com/tpope/vim-sensible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
@@ -15,51 +17,77 @@ Bundle 'ledger/vim-ledger'
 
 filetype plugin indent on
 
-" Don't need old vi backwards compatibility
-set nocompatible
+if has('autocmd')
+    filetype plugin indent on
+endif
 
-" Elongate the history
-set history=1000
+if has('syntax') && !exists('g:syntax_on')
+    syntax enable
+endif
 
-" Set teminal title
-set title
-
-" Turn the filetype plugin on - filetype specific plugins
-set ofu=syntaxcomplete#Complete
-
-" Visual Settings
-set showmatch " Show matching brackets
-set mat=5 " How long to flash matching brackets
-set visualbell 
-
-" Tabs and indents
+" Sensible defaults from @tpope
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
+set showmatch
+set smarttab
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
-set autoindent
-set copyindent
-set smarttab
 
-" Always turn syntax highlighting on
-syntax enable
+set nrformats-=octal
+set shiftround
+
+set ttimeout
+set ttimeoutlen=50
+
+set incsearch
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+    nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
+
+set laststatus=2
+set ruler
+set showcmd
+set wildmenu
+
+if !&scrolloff
+    set scrolloff=1
+endif
+if !&sidescrolloff
+    set sidescrolloff=5
+endif
+set display+=lastline
+
+if &encoding ==# 'latin1' && has('gui_running')
+    set encoding=utf-8
+endif
+
+if &listchars ==# 'eol:$'
+    set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+    if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+        let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+    endif
+endif
+
+set autoread
+set autowrite
+set fileformats+=mac
+
+if &history < 1000
+    set history=1000
+endif
+
+set viminfo^=!
+
+" Linenumber
+set relativenumber
 
 " Colourscheme
 set background=light
 colorscheme solarized
-
-set showmode
-set showcmd
-set wildmenu
-set wildmode=list:longest
-set ttyfast
-set ruler
-set backspace=indent,eol,start
-set laststatus=2
-set number
-
-"Search functions
-set hlsearch
 
 " Cryptic name, but allows *hiding* of buffers rather than closing
 set hidden
@@ -69,9 +97,13 @@ set pastetoggle=<F2>
 
 " Disable arrow keys
 noremap <Up> <Nop>
+inoremap <Up> <Nop>
 noremap <Down> <Nop>
+inoremap <Down> <Nop>
 noremap <Left> <Nop>
+inoremap <Left> <Nop>
 noremap <Right> <Nop>
+inoremap <Right> <Nop>
 
 " Make j and k do expected action on long, wrapped lines
 nnoremap j gj
@@ -80,36 +112,45 @@ nnoremap k gk
 " Don't update the display when running macros
 set lazyredraw
 
-" No need for backup files
-set nobackup
-
-" If we have any user/machine specific settings source them
-if filereadable('~/.vim/user.vim')
-    source ~/.vim/user.vim
+" Dump swap files under ~/.local/share/vim/swap: platform dependent
+let s:dir = has('win32') ? '~/Application Data/Vim' : match(system('uname'), "Darwin") > -1 ? '~/Library/Vim' : '~/.local/share/vim'
+if isdirectory(expand(s:dir))
+    if &directory =~# '^\.,'
+        let &directory = expand(s:dir) . '/swap//,' . &directory
+    endif
+    if &backupdir =~# '^\.,'
+        let &backupdir = expand(s:dir) . '/backup//,' . &backupdir
+    endif
+    if exists('+undodir') && &undodir =~# '^\.\%(,\|$\)'
+        let &undodir = expand(s:dir) . '/undo//,' . &undodir
+    endif
 endif
 
-if filereadable('~/.vim/machine.vim')
-    source ~/.vim/machine.vim
+if exists('+undofile')
+    set undofile
 endif
+
+" Make Y consistent with C and D.  See :help Y.
+nnoremap Y y$
 
 " Handle funny TERM quirks in vim
 if $TERM =~ '^screen-256color'
     set t_Co=256
-     map <Esc>OH <Home>
-     map! <Esc>OH <Home>
-     map <Esc>OF <End>
-     map! <Esc>OF <End>
+    map <Esc>OH <Home>
+    map! <Esc>OH <Home>
+    map <Esc>OF <End>
+    map! <Esc>OF <End>
 endif
 
 
 " Neat function to toggle relative v absolute line numbers
 " from http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
 function! NumberToggle()
-  if(&relativenumber == 1)
-    set number
-  else
-    set relativenumber
-  endif
+    if(&relativenumber == 1)
+        set number
+    else
+        set relativenumber
+    endif
 endfunc
 
 nnoremap <C-n> :call NumberToggle()<cr>
