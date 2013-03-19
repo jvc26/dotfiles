@@ -131,9 +131,6 @@ if exists('+undofile')
     set undofile
 endif
 
-" Make Y consistent with C and D.  See :help Y.
-nnoremap Y y$
-
 " Handle funny TERM quirks in vim
 if $TERM =~ '^screen-256color'
     set t_Co=256
