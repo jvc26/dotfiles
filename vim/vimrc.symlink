@@ -15,6 +15,7 @@ Bundle 'jvc26/vim-puppet'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ledger/vim-ledger'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
+Bundle 'jvc26/Arduino-syntax-file'
 
 filetype plugin indent on
 
@@ -130,9 +131,6 @@ endif
 if exists('+undofile')
     set undofile
 endif
-
-" Make Y consistent with C and D.  See :help Y.
-nnoremap Y y$
 
 " Handle funny TERM quirks in vim
 if $TERM =~ '^screen-256color'
