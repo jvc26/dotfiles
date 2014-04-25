@@ -83,10 +83,10 @@ alias gs='git status -sb'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
 # Include virtualenvwrapper
-if ! [ -f /etc/bash_completion.d/virtualenvwrapper ]
+if ! [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]
 then
     warn "Virtualenvwrapper config not present where expected"
 else
-    source /etc/bash_completion.d/virtualenvwrapper
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh 
     success "Virtualenvwrapper loaded"
 fi
