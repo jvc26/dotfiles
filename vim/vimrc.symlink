@@ -10,7 +10,7 @@ call vundle#rc()
 Bundle 'tpope/vim-fugitive'
 Bundle 'hallison/vim-markdown'
 Bundle 'gregsexton/MatchTag'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'bling/vim-airline'
 Bundle 'jvc26/vim-puppet'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ledger/vim-ledger'
@@ -141,3 +141,4 @@ if $TERM =~ '^screen-256color'
 endif
 
 let g:Powerline_symbols = 'fancy'
+let g:airline_theme = 'solarized'
