@@ -90,3 +90,6 @@ else
     source /usr/share/virtualenvwrapper/virtualenvwrapper.sh 
     success "Virtualenvwrapper loaded"
 fi
+
+# Load local settings from ~/.zshrc-local
+test -s ~/.zshrc-local && . ~/.zshrc-local || true
