@@ -63,15 +63,20 @@ PS2='%* [$?] %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%
 # Aliases
 
 ## Shell
-alias ls='ls --color=auto --hide="*.pyc"'
-alias ll='ls -l --color=auto --hide="*.pyc"'
-alias la='ls -la --color=auto --hide="*.pyc"'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+
+alias ls='ls --color --hide="*.pyc"'
+alias ll='ls -l --color --hide="*.pyc"'
+alias la='ls -lAFh --color --hide="*.pyc"'
 
 ## Grep
 alias grep='grep --color=auto'
 
 ## Tmux
-alias tmux='TERM=screen-256color-bce tmux'
+alias tmux='TERM=screen-256color-bce tmux -2'
 
 ## Git (Via [@holman](https://github.com/holman/dotfiles/blob/master/git/aliases.zsh))
 alias gd='git diff'
