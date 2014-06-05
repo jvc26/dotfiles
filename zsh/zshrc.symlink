@@ -62,8 +62,7 @@ PS1='
 
 PS2='%* [$?] %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~%#_ '
 
-# Aliases
-# all of our zsh files
+# Locate zsh config files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
 
@@ -72,23 +71,11 @@ do
     source $file
 done
 
-## Grep
-alias grep='grep --color'
-
-## Tmux
-alias tmux='TERM=screen-256color-bce tmux -2'
-
-## Git (Via [@holman](https://github.com/holman/dotfiles/blob/master/git/aliases.zsh))
-alias gd='git diff'
-alias gp='git push origin HEAD'alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-alias gc='git commit'
-alias gca='git commit -a'
-alias gco='git checkout'
-alias gcb='git checkout -b'
-alias gb='git branch'
-alias gbd='git branch -D'
-alias gs='git status -sb'
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+# Load local settings from ~/.localrc
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
 
 # Include virtualenvwrapper
 if ! [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]
@@ -97,10 +84,4 @@ then
 else
     source /usr/share/virtualenvwrapper/virtualenvwrapper.sh 
     success "Virtualenvwrapper loaded"
-fi
-
-# Load local settings from ~/.localrc
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
 fi
