@@ -2,10 +2,13 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=5000
 SAVEHIST=5000
-setopt hist_ignore_dups
-setopt hist_ignore_all_dups
-setopt hist_reduce_blanks
-setopt share_history
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+
 
 # Colours and Prompt config
 autoload -Uz compinit
@@ -91,5 +94,8 @@ else
     success "Virtualenvwrapper loaded"
 fi
 
-# Load local settings from ~/.zshrc-local
-test -s ~/.zshrc-local && . ~/.zshrc-local || true
+# Load local settings from ~/.localrc
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
