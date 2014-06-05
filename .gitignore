@@ -2,3 +2,5 @@ private/*
 vim/vim.symlink/bundle/*
 .netrwhist
 *.un~
+*.pyc
+virtualenvs.symlink/*
