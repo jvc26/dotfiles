@@ -15,7 +15,6 @@ Bundle 'jvc26/vim-puppet'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ledger/vim-ledger'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
-Bundle 'jvc26/Arduino-syntax-file'
 
 filetype plugin indent on
 
