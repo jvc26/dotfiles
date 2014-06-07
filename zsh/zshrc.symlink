@@ -84,7 +84,6 @@ then
     then
         source /etc/bash_completion.d/virtualenvwrapper
         success "Virtualenvwrapper loaded"
-        exit 0
     fi
     warn "Virtualenvwrapper config not present where expected"
 else
