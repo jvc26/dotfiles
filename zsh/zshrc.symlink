@@ -80,6 +80,11 @@ fi
 # Include virtualenvwrapper
 if ! [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]
 then
+    if [ -f /etc/bash_completion.d/virtualenvwrapper ]
+    then
+        source /etc/bash_completion.d/virtualenvwrapper
+        success "Virtualenvwrapper loaded"
+    fi
     warn "Virtualenvwrapper config not present where expected"
 else
     source /usr/share/virtualenvwrapper/virtualenvwrapper.sh 
