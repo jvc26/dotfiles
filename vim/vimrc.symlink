@@ -3,18 +3,27 @@
 " https://github.com/tpope/vim-sensible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" Use Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Vundle should manage Vundle
+Plugin 'gmarik/Vundle.vim'
 
 " Bundle my vim plugins
-Bundle 'tpope/vim-fugitive'
-Bundle 'hallison/vim-markdown'
-Bundle 'gregsexton/MatchTag'
-Bundle 'bling/vim-airline'
-Bundle 'jvc26/vim-puppet'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'ledger/vim-ledger'
-Bundle 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'hallison/vim-markdown'
+Plugin 'gregsexton/MatchTag'
+Plugin 'bling/vim-airline'
+Plugin 'jvc26/vim-puppet'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ledger/vim-ledger'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'fatih/vim-go'
+Plugin 'sudar/vim-arduino-syntax'
+
+" End Vundle
+call vundle#end()
 
 filetype plugin indent on
 
@@ -142,3 +151,19 @@ endif
 
 let g:Powerline_symbols = 'fancy'
 let g:airline_theme = 'solarized'
+
+" ==================== Vim-go ====================
+let g:go_fmt_fail_silently = 1
+let g:go_fmt_command = "gofmt"
+
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>s <Plug>(go-def-split)
+au FileType go nmap <Leader>v <Plug>(go-def-vertical)
+au FileType go nmap <Leader>t <Plug>(go-def-tab)
+
+au FileType go nmap <Leader>i <Plug>(go-info)
+
+au FileType go nmap  <leader>r  <Plug>(go-run)
+au FileType go nmap  <leader>b  <Plug>(go-build)
+
+au FileType go nmap <Leader>d <Plug>(go-doc)
