@@ -19,6 +19,8 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'fatih/vim-go'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'Shougo/neocomplete'
+Plugin 'jstemmer/gotags'
+Plugin 'majutsushi/tagbar'
 Plugin 'yazug/vim-taglist-plus'
 
 " End Vundle
@@ -181,3 +183,34 @@ au FileType go nmap <Leader>d <Plug>(go-doc)
 " == Include windows and explorer ==
 let g:netrw_liststyle = 3
 nnoremap <Leader><Leader> :Tlist<CR><C-W>h<C-W>s:e .<CR><C-W>l:let g:netrw_chgwin=winnr()<CR><C-W>h
+
+nmap <F8> :TagbarToggle<CR>
+
+" == Tagbar ==
+let g:tagbar_type_go = {  
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
