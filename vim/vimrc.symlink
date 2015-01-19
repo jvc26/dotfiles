@@ -166,6 +166,7 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " == Vim-go ==
 let g:go_fmt_fail_silently = 1
