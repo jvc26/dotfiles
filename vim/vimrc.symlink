@@ -151,7 +151,21 @@ endif
 let g:Powerline_symbols = 'fancy'
 let g:airline_theme = 'solarized'
 
-" ==================== Vim-go ====================
+" == Neocomplete options ==
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" == Vim-go ==
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "gofmt"
 
@@ -159,10 +173,11 @@ au FileType go nmap gd <Plug>(go-def)
 au FileType go nmap <Leader>s <Plug>(go-def-split)
 au FileType go nmap <Leader>v <Plug>(go-def-vertical)
 au FileType go nmap <Leader>t <Plug>(go-def-tab)
-
 au FileType go nmap <Leader>i <Plug>(go-info)
-
 au FileType go nmap  <leader>r  <Plug>(go-run)
 au FileType go nmap  <leader>b  <Plug>(go-build)
-
 au FileType go nmap <Leader>d <Plug>(go-doc)
+
+" == Include windows and explorer ==
+let g:netrw_liststyle = 3
+nnoremap <Leader><Leader> :Tlist<CR><C-W>h<C-W>s:e .<CR><C-W>l:let g:netrw_chgwin=winnr()<CR><C-W>h
