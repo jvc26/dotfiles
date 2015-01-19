@@ -12,15 +12,14 @@ Plugin 'gmarik/Vundle.vim'
 
 " Bundle my vim plugins
 Plugin 'tpope/vim-fugitive'
-Plugin 'hallison/vim-markdown'
 Plugin 'gregsexton/MatchTag'
 Plugin 'bling/vim-airline'
-Plugin 'jvc26/vim-puppet'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'ledger/vim-ledger'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'fatih/vim-go'
 Plugin 'sudar/vim-arduino-syntax'
+Plugin 'Shougo/neocomplete'
+Plugin 'yazug/vim-taglist-plus'
 
 " End Vundle
 call vundle#end()
