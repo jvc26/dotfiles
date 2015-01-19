@@ -110,4 +110,4 @@ then
 fi
 
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/projects/go
+export GOPATH=$HOME/Projects/go
