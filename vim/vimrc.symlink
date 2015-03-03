@@ -22,15 +22,12 @@ Plugin 'Shougo/neocomplete'
 Plugin 'jstemmer/gotags'
 Plugin 'majutsushi/tagbar'
 Plugin 'yazug/vim-taglist-plus'
+Plugin 'rust-lang/rust.vim'
 
 " End Vundle
 call vundle#end()
 
 filetype plugin indent on
-
-if has('autocmd')
-    filetype plugin indent on
-endif
 
 if has('syntax') && !exists('g:syntax_on')
     syntax enable
@@ -162,6 +159,8 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+autocmd BufNewFile,BufRead *.md let g:neocomplete#disable_auto_complete=1
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
