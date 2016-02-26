@@ -91,23 +91,8 @@ alias gcb='git copy-branch-name'
 alias gb='git branch'
 alias gs='git status -sb'
 
-# Tmux
-alias tmux='TERM=screen-256color-bce tmux -2'
-
-# Include virtualenvwrapper
-if ! [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]
-then
-    warn "Unable to load virtualenwrapper"
-else
-    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh 
-    success "Virtualenvwrapper loaded"
-fi
-
 # Load local settings from ~/.localrc
 if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
-
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/Projects/go
