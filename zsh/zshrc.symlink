@@ -49,11 +49,17 @@ success () {
     printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
 }
 
-hostcolor=yellow
+usercolor=blue
+
+case $USER in 
+    *-adm) usercolor=red
+esac
+
+hostcolor=blue
 
 PS1='
 %* $[HISTCMD-1] [$?] ${vcs_info_msg_0_} %{$reset_color%}%~
-%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[$hostcolor]%}%m%{$reset_color%}%# '
+%{$fg[$usercolor]%}%n%{$reset_color%}@%{$fg[$hostcolor]%}%m%{$reset_color%}%# '
 
 PS2='%* [$?] %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~%#_ '
 
