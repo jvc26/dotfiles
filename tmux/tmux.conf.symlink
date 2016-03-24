@@ -25,7 +25,8 @@ set-option -g default-command "exec /usr/bin/zsh"
 # default statusbar colors
 set-option -g status-fg black
 set-option -g status-bg default
-set -g status-left '#[fg=green]#H'
+set -g status-left ''
+set -g status-right '#[fg=colour202]#H#[fg=black] :: %H:%M %d-%m-%Y'
 
 # default window title colors
 set-window-option -g window-status-fg blue
@@ -33,9 +34,10 @@ set-window-option -g window-status-bg default
 set-window-option -g window-status-attr dim
 
 # active window title colors
-set-window-option -g window-status-current-fg yellow
+setw -g window-status-format " #I:#W#F "
+setw -g window-status-current-format " #I:#W#F "
+set-window-option -g window-status-current-fg colour21
 set-window-option -g window-status-current-bg default
-set-window-option -g window-status-current-attr bright
 
 # command/message line colors
 set-option -g message-fg white
