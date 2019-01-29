@@ -15,10 +15,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/MatchTag'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
-Plugin 'elixir-lang/vim-elixir'
 
 " End Vundle
 call vundle#end()
@@ -88,10 +86,6 @@ set viminfo^=!
 
 " Linenumber
 set relativenumber
-
-" Colourscheme
-set background=light
-colorscheme solarized
 
 " Cryptic name, but allows *hiding* of buffers rather than closing
 set hidden
