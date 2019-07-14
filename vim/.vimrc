@@ -34,16 +34,6 @@ set hidden
 "Activate pasting, so we don't get stacks of horrible indents.
 set pastetoggle=<F2>
 
-" Disable arrow keys
-noremap <Up> <Nop>
-inoremap <Up> <Nop>
-noremap <Down> <Nop>
-inoremap <Down> <Nop>
-noremap <Left> <Nop>
-inoremap <Left> <Nop>
-noremap <Right> <Nop>
-inoremap <Right> <Nop>
-
 " Make j and k do expected action on long, wrapped lines
 nnoremap j gj
 nnoremap k gk
